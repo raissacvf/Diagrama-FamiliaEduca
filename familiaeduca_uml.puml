@@ -1,0 +1,176 @@
+@startuml FamiliaEduca_Diagrama_Classes
+
+title Diagrama de Classes - Sistema FamiliaEduca
+
+' Definição de Cores para Melhor Visualização
+skinparam class {
+    BackgroundColor PaleGreen
+    BorderColor DarkGreen
+    ArrowColor Black
+}
+
+' --------------------------
+' 1. CLASSES DE PAPEL E USUÁRIO
+' --------------------------
+
+class Usuario {
+    +cd_usuario: int {PK}
+    +nm_usuario: string
+    +ds_senha: string
+    +ds_funcao: string
+    +nu_telefone: int
+    --
+    +autenticar(senha): boolean
+    +acessarSistema()
+}
+
+class Aluno {
+    +cd_matricula: int {PK}
+    +nm_crianca: string
+    +dt_nasc_crianca: Date
+    +ds_endereco_cr: string
+    +ds_laudo: string
+    +ds_alergias: string
+    +ds_intolerancias: string
+    +ds_autorizacao: string
+    --
+    +visualizarNotas(): List<Nota>
+    +visualizarFrequencia(): List<Frequencia>
+}
+
+class Responsavel {
+    +cd_responsavel: int {PK}
+    +nm_responsavel: string
+    +ds_endereco_re: string
+    --
+    +agendarReuniao(professor): Reuniao
+    +preencherChecklist(): ChecklistResponsavel
+}
+
+class Professor {
+    +cd_professor: int {PK}
+    +nm_professor: string
+    --
+    +lancarNota(aluno, disciplina, valor): Nota
+    +lancarFrequencia(aluno, data, presenca): Frequencia
+    +preencherChecklist(): ChecklistProfessor
+}
+
+' --------------------------
+' 2. CLASSES DE GESTÃO ACADÊMICA E LOGÍSTICA
+' --------------------------
+
+class Turma {
+    +cd_turma: int {PK}
+    +nm_turma: string
+    --
+    +listarAlunos(): List<Aluno>
+}
+
+class Nota {
+    +cd_nota: int {PK}
+    +ds_disciplina: string
+    +vl_nota: Decimal(10,2)
+    +dt_avaliacao: Date
+}
+
+class Frequencia {
+    +cd_frequencia: int {PK}
+    +dt_frequencia: Date
+    +st_presenca: string
+}
+
+class Justificativa {
+    +cd_justificativa: int {PK}
+    +ds_motivo: string
+    +anexo_justificativa: string
+}
+
+class RenovacaoAluno {
+    +cd_renovacao: int {PK}
+    +dt_renovacao: Date
+    +ds_status: string
+}
+
+class Cardapio {
+    +cd_cardapio: int {PK}
+    +dt_publicacao: Date
+    +ds_cardapio: string
+}
+
+class Calendario {
+    +cd_calendario: int {PK}
+    +ds_calendario: string
+}
+
+' --------------------------
+' 3. CLASSES DE COMUNICAÇÃO E REGISTRO
+' --------------------------
+
+class Aviso {
+    +cd_aviso: int {PK}
+    +ds_titulo: string
+    +ds_mensagem: string
+    +dt_publicacao: Date
+}
+
+class Reuniao {
+    +cd_reuniao: int {PK}
+    +dt_reuniao: Date
+    +ds_motivo: string
+}
+
+class Medicacao {
+    +cd_medicacao: int {PK}
+    +nm_medicamento: string
+    +ds_dosagem: string
+    +dt_aplicacao: Date
+    +hr_aplicacao: string
+}
+
+class ChecklistProfessor {
+    +cd_checklist: int {PK}
+    +dt_checklist: Date
+    +ds_observacoes: string
+}
+
+class ChecklistResponsavel {
+    +cd_checklist: int {PK}
+    +dt_checklist: Date
+    +ds_itens_verificados: string
+}
+
+
+' --------------------------
+' 4. RELACIONAMENTOS (Baseado no Modelo Lógico)
+' --------------------------
+
+' Relações N:N Resolvidas
+Aluno "1..N" -- "1..N" Responsavel : é_cuidado_por (via aluno_responsavel)
+Aluno "1..N" -- "1..N" Turma : pertence_a (via aluno_turma)
+
+' Relações 1:N / Composição (Composição: losango preto; Agregação: losango branco/vazio)
+
+' Relacionamentos do Aluno (Composição)
+Aluno "1" *-- "1..N" Nota : registra
+Aluno "1" *-- "1..N" Frequencia : registra
+Aluno "1" *-- "0..N" Justificativa : envia
+Aluno "1" *-- "0..N" Medicacao : utiliza
+Aluno "1" o-- "0..N" RenovacaoAluno : possui_status (Agregação, pois Renovacao pode ser um processo externo)
+Aluno "1" *-- "0..N" ChecklistProfessor : é_observado_em
+Aluno "1" *-- "0..N" ChecklistResponsavel : é_verificado_em
+
+' Relacionamentos da Turma e Professor
+Professor "1" o-- "1..N" Turma : leciona_para
+Professor "1" o-- "0..N" Reuniao : participa
+Professor "1" o-- "0..N" ChecklistProfessor : preenche
+
+Responsavel "1" o-- "0..N" Reuniao : agenda/participa
+Responsavel "1" o-- "0..N" ChecklistResponsavel : preenche
+
+' Relacionamentos de Usuário (Quem administra/cria)
+Usuario "1" o-- "0..N" Aviso : publica
+Usuario "1" o-- "0..N" Cardapio : publica
+Usuario "1" o-- "0..N" Calendario : administra
+
+@enduml
