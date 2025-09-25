@@ -1,225 +1,299 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0" version="28.2.5">
-  <diagram id="uml_familia_educa" name="Diagrama de Classes">
-    <mxGraphModel dx="1034" dy="618" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1850" math="0" shadow="0">
+<mxfile host="app.diagrams.net" modified="2025-09-25T16:40:00.000Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="A-bC_dE4fG_hI-jK7lM8" version="24.4.16" type="device">
+  <diagram id="uml_familia_educa_encapsulado" name="Diagrama de Classes Encapsulado">
+    <mxGraphModel dx="1685" dy="1795" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="1800" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="class-usuario" value="&lt;u&gt;Usuario&lt;/u&gt;&lt;div&gt;+ cd_usuario: int {PK}&lt;/div&gt;&lt;div&gt;+ nm_usuario: string&lt;/div&gt;&lt;div&gt;+ ds_senha: string&lt;/div&gt;&lt;div&gt;+ ds_funcao: string&lt;/div&gt;&lt;div&gt;+ nu_telefone: int&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ autenticar(senha): boolean&lt;/div&gt;&lt;div&gt;+ acessarSistema()&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" parent="1" vertex="1">
-          <mxGeometry x="490" y="30" width="180" height="150" as="geometry" />
+        <mxCell id="class-usuario" value="&lt;u&gt;Usuario&lt;/u&gt;&lt;div&gt;- cd_usuario: int {PK}&lt;/div&gt;&lt;div&gt;- nm_usuario: string&lt;/div&gt;&lt;div&gt;- ds_senha: string&lt;/div&gt;&lt;div&gt;- ds_funcao: string&lt;/div&gt;&lt;div&gt;- nu_telefone: int&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ autenticar(senha): boolean&lt;/div&gt;&lt;div&gt;+ acessarSistema()&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" vertex="1" parent="1">
+          <mxGeometry x="630" y="30" width="180" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="class-aluno" value="&lt;u&gt;Aluno&lt;/u&gt;&lt;div&gt;+ cd_matricula: int {PK}&lt;/div&gt;&lt;div&gt;+ nm_crianca: string&lt;/div&gt;&lt;div&gt;+ dt_nasc_crianca: Date&lt;/div&gt;&lt;div&gt;+ ds_laudo: string&lt;/div&gt;&lt;div&gt;+ ds_alergias: string&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ visualizarNotas(): List&amp;lt;Nota&amp;gt;&lt;/div&gt;&lt;div&gt;+ visualizarFrequencia(): List&amp;lt;Frequencia&amp;gt;&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" parent="1" vertex="1">
-          <mxGeometry x="250" y="270" width="180" height="170" as="geometry" />
+        <mxCell id="class-aluno" value="&lt;u&gt;Aluno&lt;/u&gt;&lt;div&gt;- cd_matricula: int {PK}&lt;/div&gt;&lt;div&gt;- nm_crianca: string&lt;/div&gt;&lt;div&gt;- dt_nasc_crianca: Date&lt;/div&gt;&lt;div&gt;- ds_laudo: string&lt;/div&gt;&lt;div&gt;- ds_alergias: string&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ visualizarNotas(): List&amp;lt;Nota&amp;gt;&lt;/div&gt;&lt;div&gt;+ visualizarFrequencia(): List&amp;lt;Frequencia&amp;gt;&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" vertex="1" parent="1">
+          <mxGeometry x="250" y="300" width="180" height="170" as="geometry" />
         </mxCell>
-        <mxCell id="class-responsavel" value="&lt;u&gt;Responsavel&lt;/u&gt;&lt;div&gt;+ cd_responsavel: int {PK}&lt;/div&gt;&lt;div&gt;+ nm_responsavel: string&lt;/div&gt;&lt;div&gt;+ ds_endereco_re: string&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ agendarReuniao(professor): Reuniao&lt;/div&gt;&lt;div&gt;+ preencherChecklist(): ChecklistResponsavel&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" parent="1" vertex="1">
-          <mxGeometry x="690" y="270" width="190" height="150" as="geometry" />
+        <mxCell id="class-responsavel" value="&lt;u&gt;Responsavel&lt;/u&gt;&lt;div&gt;- cd_responsavel: int {PK}&lt;/div&gt;&lt;div&gt;- nm_responsavel: string&lt;/div&gt;&lt;div&gt;- ds_endereco_re: string&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ agendarReuniao(professor: Professor, data: Date): Reuniao&lt;/div&gt;&lt;div&gt;+ preencherChecklist(): ChecklistResponsavel&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" vertex="1" parent="1">
+          <mxGeometry x="870" y="300" width="220" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="class-professor" value="&lt;u&gt;Professor&lt;/u&gt;&lt;div&gt;+ cd_professor: int {PK}&lt;/div&gt;&lt;div&gt;+ nm_professor: string&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ lancarNota(aluno, disciplina, valor): Nota&lt;/div&gt;&lt;div&gt;+ lancarFrequencia(...): Frequencia&lt;/div&gt;&lt;div&gt;+ preencherChecklist(): ChecklistProfessor&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" parent="1" vertex="1">
-          <mxGeometry x="460" y="270" width="220" height="150" as="geometry" />
+        <mxCell id="class-professor" value="&lt;u&gt;Professor&lt;/u&gt;&lt;div&gt;- cd_professor: int {PK}&lt;/div&gt;&lt;div&gt;- nm_professor: string&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ lancarNota(aluno: Aluno, disciplina: string, valor: Decimal): Nota&lt;/div&gt;&lt;div&gt;+ lancarFrequencia(aluno: Aluno, ...): Frequencia&lt;/div&gt;&lt;div&gt;+ preencherChecklist(): ChecklistProfessor&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" vertex="1" parent="1">
+          <mxGeometry x="540" y="300" width="310" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="class-turma" value="&lt;u&gt;Turma&lt;/u&gt;&lt;div&gt;+ cd_turma: int {PK}&lt;/div&gt;&lt;div&gt;+ nm_turma: string&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ listarAlunos(): List&amp;lt;Aluno&amp;gt;&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" parent="1" vertex="1">
-          <mxGeometry x="350" y="500" width="150" height="110" as="geometry" />
+        <mxCell id="class-turma" value="&lt;u&gt;Turma&lt;/u&gt;&lt;div&gt;- cd_turma: int {PK}&lt;/div&gt;&lt;div&gt;- nm_turma: string&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ listarAlunos(): List&amp;lt;Aluno&amp;gt;&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;align=left;" vertex="1" parent="1">
+          <mxGeometry x="500" y="550" width="150" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="class-nota" value="&lt;u&gt;Nota&lt;/u&gt;&lt;div&gt;+ cd_nota: int {PK}&lt;/div&gt;&lt;div&gt;+ ds_disciplina: string&lt;/div&gt;&lt;div&gt;+ vl_nota: Decimal(10.2)&lt;/div&gt;&lt;div&gt;+ dt_avaliacao: Date&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" parent="1" vertex="1">
-          <mxGeometry x="50" y="500" width="150" height="120" as="geometry" />
+        <mxCell id="class-nota" value="&lt;u&gt;Nota&lt;/u&gt;&lt;div&gt;- cd_nota: int {PK}&lt;/div&gt;&lt;div&gt;- ds_disciplina: string&lt;/div&gt;&lt;div&gt;- vl_nota: Decimal(10.2)&lt;/div&gt;&lt;div&gt;- dt_avaliacao: Date&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;align=left;" vertex="1" parent="1">
+          <mxGeometry x="50" y="550" width="150" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="class-frequencia" value="&lt;u&gt;Frequencia&lt;/u&gt;&lt;div&gt;+ cd_frequencia: int {PK}&lt;/div&gt;&lt;div&gt;+ dt_frequencia: Date&lt;/div&gt;&lt;div&gt;+ st_presenca: string&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" parent="1" vertex="1">
-          <mxGeometry x="200" y="500" width="150" height="100" as="geometry" />
+        <mxCell id="class-frequencia" value="&lt;u&gt;Frequencia&lt;/u&gt;&lt;div&gt;- cd_frequencia: int {PK}&lt;/div&gt;&lt;div&gt;- dt_frequencia: Date&lt;/div&gt;&lt;div&gt;- st_presenca: string&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;align=left;" vertex="1" parent="1">
+          <mxGeometry x="250" y="550" width="150" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="class-reuniao" value="&lt;u&gt;Reuniao&lt;/u&gt;&lt;div&gt;+ cd_reuniao: int {PK}&lt;/div&gt;&lt;div&gt;+ dt_reuniao: Date&lt;/div&gt;&lt;div&gt;+ ds_motivo: string&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;align=left;" parent="1" vertex="1">
-          <mxGeometry x="780" y="500" width="150" height="100" as="geometry" />
+        <mxCell id="class-boletim" value="&lt;u&gt;Boletim&lt;/u&gt;&lt;div&gt;- cd_boletim: int {PK}&lt;/div&gt;&lt;div&gt;- dt_semestre: Date&lt;/div&gt;&lt;div&gt;- ds_observacoes: string&lt;/div&gt;&lt;hr&gt;&lt;div&gt;- cd_professor: int {FK}&lt;/div&gt;&lt;div&gt;- cd_matricula: int {FK}&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;align=left;" vertex="1" parent="1">
+          <mxGeometry x="670" y="550" width="200" height="140" as="geometry" />
         </mxCell>
-        <mxCell id="class-aviso" value="&lt;u&gt;Aviso&lt;/u&gt;&lt;div&gt;+ cd_aviso: int {PK}&lt;/div&gt;&lt;div&gt;+ ds_titulo: string&lt;/div&gt;&lt;div&gt;+ ds_mensagem: string&lt;/div&gt;&lt;div&gt;+ dt_publicacao: Date&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;align=left;" parent="1" vertex="1">
-          <mxGeometry x="500" y="690" width="150" height="120" as="geometry" />
+        <mxCell id="class-reuniao" value="&lt;u&gt;Reuniao&lt;/u&gt;&lt;div&gt;- cd_reuniao: int {PK}&lt;/div&gt;&lt;div&gt;- dt_reuniao: Date&lt;/div&gt;&lt;div&gt;- ds_motivo: string&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;align=left;" vertex="1" parent="1">
+          <mxGeometry x="920" y="550" width="150" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="class-medicacao" value="&lt;u&gt;Medicacao&lt;/u&gt;&lt;div&gt;+ cd_medicacao: int {PK}&lt;/div&gt;&lt;div&gt;+ nm_medicamento: string&lt;/div&gt;&lt;div&gt;+ ds_dosagem: string&lt;/div&gt;&lt;div&gt;+ dt_aplicacao: Date&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;align=left;" parent="1" vertex="1">
-          <mxGeometry x="50" y="690" width="180" height="130" as="geometry" />
+        <mxCell id="class-aviso" value="&lt;u&gt;Aviso&lt;/u&gt;&lt;div&gt;- cd_aviso: int {PK}&lt;/div&gt;&lt;div&gt;- ds_titulo: string&lt;/div&gt;&lt;div&gt;- ds_mensagem: string&lt;/div&gt;&lt;div&gt;- dt_publicacao: Date&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;align=left;" vertex="1" parent="1">
+          <mxGeometry x="670" y="750" width="150" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="class-justificativa" value="&lt;u&gt;Justificativa&lt;/u&gt;&lt;div&gt;+ cd_justificativa: int {PK}&lt;/div&gt;&lt;div&gt;+ ds_motivo: string&lt;/div&gt;&lt;div&gt;+ anexo_justificativa: string&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;align=left;" parent="1" vertex="1">
-          <mxGeometry x="250" y="690" width="200" height="110" as="geometry" />
+        <mxCell id="class-medicacao" value="&lt;u&gt;Medicacao&lt;/u&gt;&lt;div&gt;- cd_medicacao: int {PK}&lt;/div&gt;&lt;div&gt;- nm_medicamento: string&lt;/div&gt;&lt;div&gt;- ds_dosagem: string&lt;/div&gt;&lt;div&gt;- dt_aplicacao: Date&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;align=left;" vertex="1" parent="1">
+          <mxGeometry x="50" y="750" width="180" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="class-renovacao" value="&lt;u&gt;RenovacaoAluno&lt;/u&gt;&lt;div&gt;+ cd_renovacao: int {PK}&lt;/div&gt;&lt;div&gt;+ dt_renovacao: Date&lt;/div&gt;&lt;div&gt;+ ds_status: string&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;align=left;" parent="1" vertex="1">
-          <mxGeometry x="460" y="500" width="180" height="100" as="geometry" />
+        <mxCell id="class-justificativa" value="&lt;u&gt;Justificativa&lt;/u&gt;&lt;div&gt;- cd_justificativa: int {PK}&lt;/div&gt;&lt;div&gt;- ds_motivo: string&lt;/div&gt;&lt;div&gt;- anexo_justificativa: string&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;align=left;" vertex="1" parent="1">
+          <mxGeometry x="250" y="750" width="200" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="class-checklist-professor" value="&lt;u&gt;ChecklistProfessor&lt;/u&gt;&lt;div&gt;+ cd_checklist: int {PK}&lt;/div&gt;&lt;div&gt;+ dt_checklist: Date&lt;/div&gt;&lt;div&gt;+ ds_observacoes: string&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;align=left;" parent="1" vertex="1">
-          <mxGeometry x="460" y="870" width="190" height="110" as="geometry" />
+        <mxCell id="class-renovacao" value="&lt;u&gt;RenovacaoAluno&lt;/u&gt;&lt;div&gt;- cd_renovacao: int {PK}&lt;/div&gt;&lt;div&gt;- dt_renovacao: Date&lt;/div&gt;&lt;div&gt;- ds_status: string&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;align=left;" vertex="1" parent="1">
+          <mxGeometry x="460" y="750" width="180" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="class-checklist-responsavel" value="&lt;u&gt;ChecklistResponsavel&lt;/u&gt;&lt;div&gt;+ cd_checklist: int {PK}&lt;/div&gt;&lt;div&gt;+ dt_checklist: Date&lt;/div&gt;&lt;div&gt;+ ds_itens_verificados: string&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;align=left;" parent="1" vertex="1">
-          <mxGeometry x="670" y="870" width="220" height="110" as="geometry" />
+        <mxCell id="class-checklist-professor" value="&lt;u&gt;ChecklistProfessor&lt;/u&gt;&lt;div&gt;- cd_checklist: int {PK}&lt;/div&gt;&lt;div&gt;- dt_checklist: Date&lt;/div&gt;&lt;div&gt;- ds_observacoes: string&lt;/div&gt;&lt;hr&gt;&lt;div&gt;- cd_professor: int {FK}&lt;/div&gt;&lt;div&gt;- cd_matricula: int {FK}&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;align=left;" vertex="1" parent="1">
+          <mxGeometry x="460" y="940" width="190" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="class-cardapio" value="&lt;u&gt;Cardapio&lt;/u&gt;&lt;div&gt;+ cd_cardapio: int {PK}&lt;/div&gt;&lt;div&gt;+ dt_publicacao: Date&lt;/div&gt;&lt;div&gt;+ ds_cardapio: string&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;align=left;" parent="1" vertex="1">
-          <mxGeometry x="700" y="690" width="150" height="110" as="geometry" />
+        <mxCell id="class-checklist-responsavel" value="&lt;u&gt;ChecklistResponsavel&lt;/u&gt;&lt;div&gt;- cd_checklist: int {PK}&lt;/div&gt;&lt;div&gt;- dt_checklist: Date&lt;/div&gt;&lt;div&gt;- ds_itens_verificados: string&lt;/div&gt;&lt;hr&gt;&lt;div&gt;- cd_responsavel: int {FK}&lt;/div&gt;&lt;div&gt;- cd_matricula: int {FK}&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;align=left;" vertex="1" parent="1">
+          <mxGeometry x="670" y="940" width="220" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="class-calendario" value="&lt;u&gt;Calendario&lt;/u&gt;&lt;div&gt;+ cd_calendario: int {PK}&lt;/div&gt;&lt;div&gt;+ ds_calendario: string&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;align=left;" parent="1" vertex="1">
-          <mxGeometry x="870" y="690" width="150" height="90" as="geometry" />
+        <mxCell id="class-cardapio" value="&lt;u&gt;Cardapio&lt;/u&gt;&lt;div&gt;- cd_cardapio: int {PK}&lt;/div&gt;&lt;div&gt;- dt_publicacao: Date&lt;/div&gt;&lt;div&gt;- ds_cardapio: string&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;align=left;" vertex="1" parent="1">
+          <mxGeometry x="840" y="750" width="150" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="rel-aluno-professor" value="1" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#000000;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" parent="1" source="class-aluno" target="class-professor">
+        <mxCell id="class-calendario" value="&lt;u&gt;Calendario&lt;/u&gt;&lt;div&gt;- cd_calendario: int {PK}&lt;/div&gt;&lt;div&gt;- ds_calendario: string&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="750" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-professor-turma" value="1" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#82b366;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=ERmand;startFill=0;" parent="1" source="class-professor" target="class-turma">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="440" y="345" as="sourcePoint" />
-            <mxPoint x="460" y="345" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="rel-professor-responsavel" value="1" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" parent="1" source="class-professor" target="class-responsavel">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="680" y="345" as="sourcePoint" />
-            <mxPoint x="690" y="345" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="rel-aluno-turma" value="1..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#000000;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=none;" parent="1" source="class-aluno" target="class-turma">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="340" y="440" as="sourcePoint" />
-            <mxPoint x="340" y="500" as="targetPoint" />
+            <mxPoint x="695" y="450" as="sourcePoint" />
+            <mxPoint x="575" y="550" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="340" y="470" />
+              <mxPoint x="695" y="500" />
+              <mxPoint x="575" y="500" />
+            </Array>
+            <mxPoint x="625" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-professor-turma-cardinalidade" value="1..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel-professor-turma">
+          <mxGeometry x="0.1067" y="2" relative="1" as="geometry">
+            <mxPoint x="-2" y="12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-aluno-turma" value="1..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#82b366;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="class-aluno" target="class-turma">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="340" y="470" as="sourcePoint" />
+            <mxPoint x="500" y="580" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="340" y="530" />
+              <mxPoint x="470" y="530" />
+              <mxPoint x="470" y="580" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="rel-turma-aluno" value="1..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#000000;" parent="1" source="class-turma" target="class-aluno">
+        <mxCell id="rel-turma-aluno" value="1..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#82b366;" parent="1" source="class-turma" target="class-aluno">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="350" y="500" as="sourcePoint" />
-            <mxPoint x="340" y="440" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="rel-aluno-responsavel-1" value="1..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#000000;" parent="1" source="class-aluno" target="class-responsavel">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="430" y="360" as="sourcePoint" />
-            <mxPoint x="690" y="360" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="rel-aluno-responsavel-2" value="1..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#000000;" parent="1" source="class-responsavel" target="class-aluno">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="880" y="360" as="sourcePoint" />
-            <mxPoint x="430" y="360" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="rel-aluno-nota" value="1..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#000000;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERcomprising;" parent="1" source="class-aluno" target="class-nota">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="250" y="375" as="sourcePoint" />
-            <mxPoint x="200" y="375" as="targetPoint" />
+            <mxPoint x="500" y="580" as="sourcePoint" />
+            <mxPoint x="430" y="385" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="220" y="375" />
-              <mxPoint x="220" y="560" />
+              <mxPoint x="500" y="470" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="rel-aluno-frequencia" value="1..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#000000;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERcomprising;" parent="1" source="class-aluno" target="class-frequencia">
+        <mxCell id="rel-aluno-responsavel" value="1..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#82b366;" parent="1" source="class-aluno" target="class-responsavel">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="250" y="390" as="sourcePoint" />
-            <mxPoint x="200" y="550" as="targetPoint" />
+            <mxPoint x="430" y="385" as="sourcePoint" />
+            <mxPoint x="870" y="375" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-responsavel-aluno" value="1..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#82b366;" parent="1" source="class-responsavel" target="class-aluno">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="870" y="375" as="sourcePoint" />
+            <mxPoint x="430" y="385" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-aluno-nota" value="1..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#d6b656;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERcomprising;startFill=1;" parent="1" source="class-aluno" target="class-nota">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="250" y="385" as="sourcePoint" />
+            <mxPoint x="200" y="610" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="230" y="390" />
-              <mxPoint x="230" y="550" />
+              <mxPoint x="230" y="385" />
+              <mxPoint x="230" y="610" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="rel-aluno-justificativa" value="0..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#d6b656;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=ERcomprising;endFill=0;" parent="1" source="class-aluno" target="class-justificativa">
+        <mxCell id="rel-aluno-frequencia" value="1..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#d6b656;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=ERcomprising;startFill=1;" parent="1" source="class-aluno" target="class-frequencia">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="340" y="440" as="sourcePoint" />
-            <mxPoint x="350" y="690" as="targetPoint" />
+            <mxPoint x="340" y="470" as="sourcePoint" />
+            <mxPoint x="325" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-aluno-medicacao" value="0..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#d6b656;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERcomprising;startFill=1;" parent="1" source="class-aluno" target="class-medicacao">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="250" y="385" as="sourcePoint" />
+            <mxPoint x="230" y="815" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="340" y="470" />
-              <mxPoint x="340" y="660" />
-              <mxPoint x="350" y="660" />
+              <mxPoint x="230" y="385" />
+              <mxPoint x="230" y="815" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="rel-aluno-medicacao" value="0..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#d6b656;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERcomprising;endFill=0;" parent="1" source="class-aluno" target="class-medicacao">
+        <mxCell id="rel-aluno-justificativa" value="0..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#d6b656;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=ERcomprising;startFill=1;" parent="1" source="class-aluno" target="class-justificativa">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="250" y="340" as="sourcePoint" />
-            <mxPoint x="230" y="755" as="targetPoint" />
+            <mxPoint x="340" y="470" as="sourcePoint" />
+            <mxPoint x="350" y="750" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="200" y="340" />
-              <mxPoint x="200" y="755" />
+              <mxPoint x="340" y="510" />
+              <mxPoint x="350" y="510" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="rel-aluno-renovacao" value="0..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#d6b656;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERmand;endFill=0;" parent="1" source="class-aluno" target="class-renovacao">
+        <mxCell id="rel-aluno-renovacao" value="0..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#d6b656;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="class-aluno" target="class-renovacao">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="430" y="375" as="sourcePoint" />
-            <mxPoint x="460" y="550" as="targetPoint" />
+            <mxPoint x="430" y="385" as="sourcePoint" />
+            <mxPoint x="460" y="800" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="445" y="375" />
-              <mxPoint x="445" y="550" />
+              <mxPoint x="445" y="385" />
+              <mxPoint x="445" y="800" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="rel-professor-turma" value="1..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#82b366;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=ERmand;" parent="1" source="class-professor" target="class-turma">
+        <mxCell id="rel-aluno-renovacao-cardinalidade" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel-aluno-renovacao">
+          <mxGeometry x="-0.0989" y="-2" relative="1" as="geometry">
+            <mxPoint x="20" y="60" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-aluno-checklist-professor" value="0..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#d6b656;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=ERcomprising;startFill=1;" parent="1" source="class-aluno" target="class-checklist-professor">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="570" y="420" as="sourcePoint" />
-            <mxPoint x="425" y="500" as="targetPoint" />
+            <mxPoint x="340" y="470" as="sourcePoint" />
+            <mxPoint x="555" y="940" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="570" y="470" />
-              <mxPoint x="425" y="470" />
+              <mxPoint x="340" y="910" />
+              <mxPoint x="555" y="910" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="rel-professor-checklist" value="0..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#d6b656;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=ERmand;" parent="1" source="class-professor" target="class-checklist-professor">
+        <mxCell id="rel-aluno-checklist-responsavel" value="0..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#d6b656;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=ERcomprising;startFill=1;" parent="1" source="class-aluno" target="class-checklist-responsavel">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="570" y="420" as="sourcePoint" />
-            <mxPoint x="555" y="870" as="targetPoint" />
+            <mxPoint x="430" y="385" as="sourcePoint" />
+            <mxPoint x="780" y="940" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="570" y="840" />
-              <mxPoint x="555" y="840" />
+              <mxPoint x="450" y="385" />
+              <mxPoint x="450" y="910" />
+              <mxPoint x="780" y="910" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="rel-responsavel-checklist" value="0..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#d6b656;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=ERmand;" parent="1" source="class-responsavel" target="class-checklist-responsavel">
+        <mxCell id="rel-aluno-boletim" value="0..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#d6b656;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="class-aluno" target="class-boletim">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="785" y="420" as="sourcePoint" />
-            <mxPoint x="785" y="870" as="targetPoint" />
+            <mxPoint x="430" y="385" as="sourcePoint" />
+            <mxPoint x="670" y="610" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="785" y="840" />
+              <mxPoint x="440" y="385" />
+              <mxPoint x="440" y="610" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="rel-responsavel-reuniao" value="0..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#b85450;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERmand;" parent="1" source="class-responsavel" target="class-reuniao">
+        <mxCell id="rel-aluno-boletim-cardinalidade" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel-aluno-boletim">
+          <mxGeometry x="-0.108" y="-4" relative="1" as="geometry">
+            <mxPoint x="20" y="40" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-professor-checklist-professor" value="0..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#d6b656;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=ERmand;startFill=0;" parent="1" source="class-professor" target="class-checklist-professor">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="880" y="345" as="sourcePoint" />
-            <mxPoint x="780" y="550" as="targetPoint" />
+            <mxPoint x="695" y="450" as="sourcePoint" />
+            <mxPoint x="555" y="940" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="930" y="345" />
-              <mxPoint x="930" y="550" />
+              <mxPoint x="695" y="470" />
+              <mxPoint x="555" y="470" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="rel-professor-reuniao" value="0..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#b85450;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=ERmand;" parent="1" source="class-professor" target="class-reuniao">
+        <mxCell id="rel-professor-checklist-professor-cardinalidade" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel-professor-checklist-professor">
+          <mxGeometry x="-0.0485" y="-3" relative="1" as="geometry">
+            <mxPoint x="10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-professor-reuniao" value="0..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#b85450;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=ERmand;startFill=0;" parent="1" source="class-professor" target="class-reuniao">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="680" y="345" as="sourcePoint" />
-            <mxPoint x="855" y="500" as="targetPoint" />
+            <mxPoint x="850" y="375" as="sourcePoint" />
+            <mxPoint x="995" y="550" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="680" y="470" />
-              <mxPoint x="855" y="470" />
+              <mxPoint x="870" y="375" />
+              <mxPoint x="870" y="520" />
+              <mxPoint x="995" y="520" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="rel-usuario-aviso" value="0..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#b85450;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=ERmand;" parent="1" source="class-usuario" target="class-aviso">
+        <mxCell id="rel-professor-reuniao-cardinalidade" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel-professor-reuniao">
+          <mxGeometry x="-0.0156" y="2" relative="1" as="geometry">
+            <mxPoint x="10" y="20" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-responsavel-checklist" value="0..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#d6b656;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=ERmand;startFill=0;" parent="1" source="class-responsavel" target="class-checklist-responsavel">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="580" y="180" as="sourcePoint" />
-            <mxPoint x="575" y="690" as="targetPoint" />
+            <mxPoint x="980" y="450" as="sourcePoint" />
+            <mxPoint x="780" y="940" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="580" y="220" />
-              <mxPoint x="580" y="660" />
-              <mxPoint x="575" y="660" />
+              <mxPoint x="980" y="470" />
+              <mxPoint x="780" y="470" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="rel-usuario-cardapio" value="0..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#b85450;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=ERmand;" parent="1" source="class-usuario" target="class-cardapio">
+        <mxCell id="rel-responsavel-checklist-cardinalidade" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel-responsavel-checklist">
+          <mxGeometry x="-0.0485" y="-3" relative="1" as="geometry">
+            <mxPoint x="10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-responsavel-reuniao" value="0..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#b85450;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERmand;startFill=0;" parent="1" source="class-responsavel" target="class-reuniao">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="580" y="180" as="sourcePoint" />
-            <mxPoint x="775" y="690" as="targetPoint" />
+            <mxPoint x="980" y="450" as="sourcePoint" />
+            <mxPoint x="920" y="600" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="580" y="220" />
-              <mxPoint x="775" y="220" />
+              <mxPoint x="980" y="520" />
+              <mxPoint x="920" y="520" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="rel-usuario-calendario" value="0..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#b85450;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=ERmand;" parent="1" source="class-usuario" target="class-calendario">
+        <mxCell id="rel-responsavel-reuniao-cardinalidade" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel-responsavel-reuniao">
+          <mxGeometry x="0.1017" y="-2" relative="1" as="geometry">
+            <mxPoint x="10" y="20" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-usuario-aviso" value="0..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#b85450;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=ERmand;startFill=0;" parent="1" source="class-usuario" target="class-aviso">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="580" y="180" as="sourcePoint" />
-            <mxPoint x="945" y="690" as="targetPoint" />
+            <mxPoint x="720" y="180" as="sourcePoint" />
+            <mxPoint x="745" y="750" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="580" y="220" />
-              <mxPoint x="945" y="220" />
+              <mxPoint x="720" y="250" />
+              <mxPoint x="745" y="250" />
             </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-usuario-aviso-cardinalidade" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel-usuario-aviso">
+          <mxGeometry x="0.0673" y="-1" relative="1" as="geometry">
+            <mxPoint x="10" y="20" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-usuario-cardapio" value="0..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#b85450;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=ERmand;startFill=0;" parent="1" source="class-usuario" target="class-cardapio">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="180" as="sourcePoint" />
+            <mxPoint x="915" y="750" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="720" y="250" />
+              <mxPoint x="915" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-usuario-cardapio-cardinalidade" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel-usuario-cardapio">
+          <mxGeometry x="0.0461" y="-1" relative="1" as="geometry">
+            <mxPoint x="10" y="20" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-usuario-calendario" value="0..*" style="endArrow=none;html=1;edgeStyle=orthogonalEdge;strokeColor=#b85450;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=ERmand;startFill=0;" parent="1" source="class-usuario" target="class-calendario">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="180" as="sourcePoint" />
+            <mxPoint x="1085" y="750" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="720" y="250" />
+              <mxPoint x="1085" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-usuario-calendario-cardinalidade" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel-usuario-calendario">
+          <mxGeometry x="0.0461" y="-1" relative="1" as="geometry">
+            <mxPoint x="10" y="20" as="offset" />
           </mxGeometry>
         </mxCell>
       </root>
